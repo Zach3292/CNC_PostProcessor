@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNC Post Processor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://cdn.jsdelivr.net/pyodide/v0.27.2/full/pyodide.js"></script>
+    <script defer type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <section class="panel">
+        <h1>CNC Post Processor</h1>
+        <p class="subtitle">Upload .NC file, run Python formatter in-browser, and download .tap output.</p>
+
+        <label for="fileInput" class="file-label">Choose input file</label>
+        <input id="fileInput" type="file" accept=".nc,.NC,.tap,.TAP,.txt" />
+
+        <div class="buttons">
+          <button id="runButton" disabled>Initialize Python...</button>
+          <button id="downloadButton" disabled>Download Output</button>
+        </div>
+
+        <div class="status" id="status">Loading Pyodide runtime...</div>
+
+        <label for="preview" class="preview-label">Output Preview</label>
+        <textarea id="preview" readonly spellcheck="false"></textarea>
+      </section>
+    </main>
+  </body>
+</html>
